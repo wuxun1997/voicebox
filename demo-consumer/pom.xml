@@ -9,9 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example.dubbo</groupId>
-    <artifactId>demo-producer</artifactId>
+    <artifactId>demo-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo-producer</name>
+    <name>demo-consumer</name>
+
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -21,7 +22,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
@@ -50,7 +51,6 @@
             <groupId>com.example.dubbo</groupId>
             <artifactId>demo-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 
