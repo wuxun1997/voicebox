@@ -1,8 +1,8 @@
 package com.example.dubbo.demoproducer;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.example.dubbo.demo.service.DemoService;
 import com.example.dubbo.demoproducer.service.DemoServiceImpl;
+import org.apache.dubbo.config.annotation.Reference;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -6,6 +6,8 @@ public class DemoBean implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String userName;
+    private String passwd;
+
 
     public String getUserName() {
         return userName;
@@ -22,7 +24,5 @@ public class DemoBean implements Serializable {
     public void setPasswd(String passwd) {
         this.passwd = passwd;
     }
-
-    private String passwd;
 
 }
