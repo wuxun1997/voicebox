@@ -1,11 +1,9 @@
 package com.example.dubbo.democonsumer.controller;
 
+import com.example.dubbo.demo.domain.DemoBean;
 import com.example.dubbo.demo.service.DemoService;
 import org.apache.dubbo.config.annotation.Reference;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ConsumerController {
@@ -17,5 +15,12 @@ public class ConsumerController {
     @RequestMapping("/hello")
     public String sayHelo(@RequestParam(value = "msg") String msg) {
         return demoService.sayHelo(msg);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(DemoBean demoBean)
+    {
+        return demoService.login(demoBean);
     }
 }
