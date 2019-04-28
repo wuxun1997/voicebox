@@ -64,7 +64,7 @@ dubbo.scan.base-packages=com.example.dubbo.demoproducer.service
 #服务监控
 dubbo.monitor.protocol=registry
 ```
-再来看看如何将实现API并注册服务：<br>
+再来看看如何将实现API并注册服务：
 ```java    
 /**
  * 注册并提供服务
@@ -94,7 +94,7 @@ public class DemoServiceImpl implements DemoService {
     }
 }    
 ```
-    这里实现了demo-api的接口DemoService，并通过@Service将服务注册到注册中心，可以通过@Service(version = "1.0.0")指定服务版本号。<br>
+    这里实现了demo-api的接口DemoService，并通过@Service将服务注册到注册中心，可以通过@Service(version = "1.0.0")指定服务版本号。
     
 ### 3. 服务消费者demo-consumer包
 同样先看看配置：<br>
@@ -118,8 +118,8 @@ dubbo.registry.file = ${user.home}/dubbo-cache/${spring.application.name}/dubbo.
 #监控中心
 dubbo.monitor.protocol=registry
 ```
-    我们可以看到服务消费者的配置比提供者的简单，只需指定注册中心即可，其他的服务发现、服务路由和负载均衡机制均由注册中心来完成。<br>
-    当发现服务提供方的调用路径后，消费方直接连通提供方进行rpc调用。<br>
+    我们可以看到服务消费者的配置比提供者的简单，只需指定注册中心即可，其他的服务发现、服务路由和负载均衡机制均由注册中心来完成。
+    当发现服务提供方的调用路径后，消费方直接连通提供方进行rpc调用。
 ```java    
 /**
  * 服务消费者
@@ -145,11 +145,11 @@ public class ConsumerController {
     }
 }
 ```
-    服务发现通过@Reference实现，也可以直接指定rpc调用接口的版本号和路径：@Reference(version = "1.0.0", url = "dubbo://127.0.0.1:1234")<br>
+    服务发现通过@Reference实现，也可以直接指定rpc调用接口的版本号和路径：@Reference(version = "1.0.0", url = "dubbo://127.0.0.1:1234")
     
 >  
 
-    最后说下pom文件的jar包依赖，spring boot本身的依赖和服务提供方、消费方对API的依赖就不说了，这里看下集成dubbo需要加入的依赖<br>
+    最后说下pom文件的jar包依赖，spring boot本身的依赖和服务提供方、消费方对API的依赖就不说了，这里看下集成dubbo需要加入的依赖
 ```xml    
         <dependency>
             <groupId>org.apache.dubbo</groupId>
@@ -162,7 +162,7 @@ public class ConsumerController {
             <version>2.7.1</version>
         </dependency>    
 ```        
-    目前最新版本是2.7.1，如果注册中心是zk的话，还需再依赖一个jar包：<br>
+    目前最新版本是2.7.1，如果注册中心是zk的话，还需再依赖一个jar包：
     
 ```xml
         <dependency>
@@ -173,4 +173,4 @@ public class ConsumerController {
         </dependency>
 ```
         
-    至于监控中心，需要本地另外启动，具体参见官网：[Dubbo管理控制台介绍](http://dubbo.apache.org/zh-cn/docs/admin/introduction.html)<br>    
+    至于监控中心，需要本地另外启动，具体参见官网：[Dubbo管理控制台介绍](http://dubbo.apache.org/zh-cn/docs/admin/introduction.html)
